@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<title>Apple Game</title>
+	<head>
+		<link rel="stylesheet" type="text/css" href="apple.css">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	</head>
+<body>
+    <div class="row">
+        <div class="col-sm-2">              
+        </div>
+        <div class="col-sm-8">
+            <center>
+                <h1 id="title">Click the Apple</h1>
+                <h1 id="score">Score : 0</h1>
+                <h1 id="time" onclick="myFunction()">Time : 10</h1>
+                <div class="screen" id="div"></div>
+                <button class="btn-danger" id="start">Start game</button>
+            </center>
+        </div>
+        <div class="col-sm-2">              
+        </div>
+    </div>
+<script>
+    $(document).ready(function () {
+        var num;
+        var app;
+        var bomb;
+
+        num = Math.floor(Math.random() * (20 - 10 + 1) + 10);
+        app = Math.floor(num * 0.75);
+        bomb = num - app;
+        var xPos;
+        var yPos;
+
+        var score = 0;
+
+    $('.gms').hide();
+        $("#start").click(function () {
+            $(this).hide();
+            time();
+            var width = $(".screen").width();
+            var height = $(".screen").height();
+            for (var i = 0; i < app; ++i) {
+                var left = Math.floor(Math.random() * (width - 100));
+                var top = Math.floor(Math.random() * (height - 100));
+
+                $('<img class="apple" src ="http://pngimg.com/uploads/apple/apple_PNG12458.png">').appendTo(".screen").css({
+                    left: left,
+                     top: top
+                });
+            }
+
+        $('.apple').click(function () {
+            ++score;
+            $(this).hide();
+            $('#score').text('Score : ' + score);
+            if (score == app) {
+                // $('#status').text('You Win!!!!');
+                $('.screen').empty();
+                $('<img  id = "stat" src ="https://cdn.dribbble.com/users/384060/screenshots/2381265/winner.gif">').appendTo(".screen");
+                clearInterval(counter);
+                $('#time').hide();                                               
+            }
+        });
+
+        for (var i = 0; i < bomb; ++i) {
+            var left = Math.floor(Math.random() * (width - 100));
+            var top = Math.floor(Math.random() * (height - 100));
+
+            $('<img class="bomb" src ="https://ui-ex.com/images/detonated-clipart-png-5.png">').appendTo(".screen").css({
+                left: left,
+                top: top
+            });
+            $('.bomb').click(function () {
+                gameover();
+                $(this).hide();
+            });
+        }
+    });
+
+
+        var count = 10;
+        var counter;
+        function time() {
+            counter = setInterval(timer, 1000);
+            function timer() {
+                $('#time').text('Time : ' + count);
+                count = count - 1;
+                if (count < 0) {
+                    clearInterval(counter);
+                    gameover();
+                }
+            }
+        }
+
+        function gameover() {
+            count = 0;
+                $('.screen').empty();
+                $('<img  id = "stat" src ="https://i.gjcdn.net/data/games/5/240/353740/media/game-description/joyousharmfuleelelephant-max-1mb-uev6eecd.gif">').appendTo(".screen");
+                clearInterval(counter);
+                $('#time').hide();
+        }
+    });
+        </script>
+	</body>
+</html>
+
+
+
+
+
