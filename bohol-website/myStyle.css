@@ -1,0 +1,88 @@
+body {
+	background-image: url(https://www.uaetoursbooking.com/wp-content/themes/midway/images/site_bg.jpg);
+	position: relative;
+	background-size: cover;
+
+}
+
+#bohol{
+	font-size:80px;
+	color:white;
+	padding: 60px;
+	background-image: url(https://realestateclemus.ca/wp-content/uploads/2015/04/banner-desarrollo-solana-real-del-mar-en-punta-de-mita.jpg);
+	margin: 10px;
+	font-family: "Comic Sans MS", cursive, sans-serif;	
+	border-radius: 1%;
+}
+
+#logo{
+	height:200px;
+	float:left;
+	margin: 15px;
+}
+nav{
+	font-size: 20px;
+	color:white;
+	padding: 2px;
+	margin: 10px;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+h3{
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	font-size:20px;
+	background-color: #ff80bf;
+	border-radius: 10%;
+	border: solid black 3px;
+	margin:30px;
+	padding:5px;
+}
+
+h2{
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	font-size:20px;
+	background-color:#66ffd9;
+	border-radius: 10%;
+	border: solid black 3px;
+	margin:30px;
+	padding:5px;
+}
+#bo,#pang,#anda,#res,#cho,#dap,#mmf,#falls,#cal,#pk,#biko,#bingka{
+	background-color:#ff80bf;
+	margin:5px;
+	font-size:15px;
+	border-radius: 10%;
+	border: solid black 3px;
+}
+button:hover{
+	opacity: 1;
+	right: 0;
+}
+
+#hov:hover{
+	opacity:1;
+	right: 0;
+	padding: 20px;
+	margin-left: 35px;
+	margin-right: 35px;
+}
+
+.affix {
+    top:0;
+    width: 100%;
+    z-index: 9999 !important;
+    margin-right: 5px
+  }
+.navbar {
+    margin-bottom: 0px;
+  }
+
+.affix ~ .container-fluid {
+   position: relative;
+   top: 50px;
+  }
+
+
+
+
+
